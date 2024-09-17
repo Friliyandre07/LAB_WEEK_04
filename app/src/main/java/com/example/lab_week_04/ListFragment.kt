@@ -18,7 +18,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ListFragment : Fragment() {
-    class ListFragment : Fragment() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
         }
@@ -50,4 +49,3 @@ class ListFragment : Fragment() {
             const val COFFEE_ID = "COFFEE_ID"
         }
     }
-}
