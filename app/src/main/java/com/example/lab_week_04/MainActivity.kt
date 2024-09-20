@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         findViewById<NavigationView>(R.id.nav_view)
-                ?.setupWithNavController(navController)
+            ?.setupWithNavController(navController)
 // Added this part only
         findViewById<BottomNavigationView>(R.id.bottom_nav)
             ?.setupWithNavController(navController)
