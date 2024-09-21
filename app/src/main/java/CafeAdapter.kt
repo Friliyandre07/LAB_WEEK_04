@@ -1,3 +1,4 @@
+import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
@@ -10,13 +11,21 @@ val TABS_FIXED = listOf(
     R.string.janjijiwa_title,
     R.string.kopikenangan_title,
 )
-class CafeAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
+class CafeAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle, private val context: Context) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
+
+    private val descriptions = listOf(
+        R.string.starbucks_desc,
+        R.string.janjijiwa_desc,
+        R.string.kopikenangan_desc
+    )
+
     override fun getItemCount(): Int {
         return TABS_FIXED.size
     }
-    override fun createFragment(position: Int): Fragment
-    {
-        return CafeDetailFragment()
+
+    override fun createFragment(position: Int): Fragment {
+        val description = context.resources.getString(descriptions[position])
+        return CafeDetailFragment.newInstance(description)
     }
 }
